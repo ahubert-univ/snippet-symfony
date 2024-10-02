@@ -13,7 +13,12 @@ Il faut retenir:
 - La function `__construct` qui a en paramètre entrée la `class` à charger qui sera stockée (ligne 16) dans la propriété que vous venez de créer.
 - A l’intérieur d'un objet on fait référence à ses propres propriétés ou function ici `$this->localExternalService`
 - Pour appeler la fonction crée dans Objet ExternalService on fait donc `$this->localExternalService->renderHtml()`
- 
 
+## Passer des paramètres à un fichier twig
 
+Dans le controller `src/Controller/TwigParameterController.php` vous trouverez un exemple de passage de paramètre à un twig.
 
+Il faut retenir:
+    - Le return (ligne 14) appelle la function render('fichier.html.twig',[CLE PARAMETRE => VALEUR PARAMETRE] )
+`$this->render('twig_parameter/index.html.twig', ['controller_name' => 'TwigParameterController',]);`
+    - c'est la clé qui est utilisé dans twig templates/twig_parameter/index.html.twig (ligne 12) ici {{ controller_name }}
